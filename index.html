@@ -32,10 +32,6 @@
 
 <body>
   <ons-page>
-  <ons-toolbar>
-    <div class="center">Orders</div>
-  </ons-toolbar>
-
   <ons-tabbar swipeable position="auto">
     <ons-tab page="orders.html" label="Orders" icon="ion-calendar, material:md-home"  active>
     </ons-tab>
@@ -48,12 +44,17 @@
 
 <template id="orders.html">
   <ons-page id="Tab1">
-    <ons-page>
+    <ons-toolbar>
+    <div class="center">Orders</div>
+      <div class="right">
     <ons-search-input
       placeholder="Search"
-      onchange="ons.notification.alert('Searched for: ' + this.value)"
-    ></ons-search-input>
-</ons-page>
+      onchange="ons.notification.alert('Searched for: ' + this.value)"></ons-search-input>  
+      
+      </div>
+  </ons-toolbar>    
+     
+
   </ons-page>
 </template>
 
