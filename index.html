@@ -31,9 +31,47 @@
 </head>
 
 <body>
-  <h1>Mordecai Cafe</h1>
-  
-  <p>This is my cafe</p>
+  <ons-page>
+  <ons-toolbar>
+    <div class="center">Orders</div>
+  </ons-toolbar>
+
+  <ons-tabbar swipeable position="auto">
+    <ons-tab page="orders.html" label="Orders" icon="ion-calendar, material:md-home"  active>
+    </ons-tab>
+    <ons-tab page="menu.html" label="Menu" icon="md-settings" active-icon="md-settings">
+    </ons-tab>
+    <ons-tab page="students.html" label="Students" icon="md-face" active-icon="md-face">
+    </ons-tab>
+  </ons-tabbar>
+</ons-page>
+
+<template id="orders.html">
+  <ons-page id="Tab1">
+    <ons-page>
+    <ons-search-input
+      placeholder="Search"
+      onchange="ons.notification.alert('Searched for: ' + this.value)"
+    ></ons-search-input>
+</ons-page>
+  </ons-page>
+</template>
+
+<template id="students.html">
+  <ons-page id="Tab3">
+    <p style="text-align: center;">
+      This is the third page.
+    </p>
+  </ons-page>
+</template>
+
+<template id="menu.html">
+  <ons-page id="Tab2">
+    <p style="text-align: center;">
+      This is the second page.
+    </p>
+  </ons-page>
+</template>
  
 
 
