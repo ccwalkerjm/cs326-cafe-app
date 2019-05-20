@@ -33,6 +33,25 @@ const _orders = [
   }
 ];
 
+var showTemplateDialog = function() {
+  var dialog = document.getElementById('my-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideDialog = function(id) {
+  document
+    .getElementById(id)
+    .hide();
+};
+
 const processPage= function(e){
  
  
@@ -42,14 +61,18 @@ const processPage= function(e){
     if(e.target.id === "orderPage"){
     const $list = document.getElementById("cafe-orders");
     for (let i = 0; i < _orders.length; i++) {
-      //document.createElement();
-      $list.appendChild(
-        ons.createElement(
+      const item = document.createElement("ons-list-item");
+      item.innerHTML = ${_orders[i].name};
+      item.setAttribute("tappable",true);
+       item.setAttribute("onclick","alert('Bingo')");
+      
+       /*ons.createElement(
           `<ons-list-item>
               ${_orders[i].name}
-          </ons-list-item>`
-        )
-      );
+          </ons-list-item>`*/     
+      
+      $list.appendChild(item);
+      
     }
 
 }
